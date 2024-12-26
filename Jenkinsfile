@@ -8,7 +8,7 @@ pipeline {
                     // Update and push to development branch
                     bat '''
 						git checkout main
-						git pull -rebase origin main
+						git pull --rebase origin main
                         git checkout development
                         git pull --rebase origin development
 						git merge main
