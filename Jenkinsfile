@@ -8,11 +8,12 @@ pipeline {
                     // Update and push to development branch
                     bat '''
 						git checkout main
-						git pull origin main --rebase
+						git pull --rebase origin main
                         git checkout development
-                        git pull origin development --rebase
-						git rebase main
+                        git pull --rebase origin development
+						git merge main
                         git add .
+						git status
                         git diff --cached --quiet || git commit -m "Automated development push"
                         git push origin development
                     '''
